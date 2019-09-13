@@ -36,48 +36,36 @@ Tasks :
 
 # Requirements
 
-## 1.os module
-The OS module in python provides functions for interacting with the operating system.
-
-## Installination
-OS module comes with python installination
-
-```bash
-sudo apt install python3
-```
-
-## Usage
-
-```python
-import os
-
-os.path.exists('mydirectory/myfile.txt') #Checking if path exists or not
-os.path.isfile('samp.txt') #Checking if 'samp.txt' is file or not
-os.path.isdir('mydirectory') #Checking if 'mydirectory' is directory or not
-
-```
-
-## 2.sys module
-The sys module in python provides functions for system operations.
-
-## Installination
-sys module comes with python installination
-
-```bash
-sudo apt install python3
-```
-
-## Usage
-
-```python
-import sys
-
-sys.exit() # to terminate program
-```
-
-# Langauge
+## Langauge
 Python is an interpreted, high-level, general-purpose programming language.Its language constructs and object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects.Python is dynamically typed and garbage-collected. It supports multiple programming paradigms, including procedural, object-oriented, and functional programming. 
 
+## Installination
+
+```bash
+sudo apt install python3
+```
+## Data structures
+Python Collections (Arrays)
+
+There are four collection data types in the Python programming language:
+
+    List is a collection which is ordered and changeable. Allows duplicate members.
+    Tuple is a collection which is ordered and unchangeable. Allows duplicate members.
+    Set is a collection which is unordered and unindexed. No duplicate members.
+    Dictionary is a collection which is unordered, changeable and indexed. No duplicate members.
+
+When choosing a collection type, it is useful to understand the properties of that type. Choosing the right type for a particular data set could mean retention of meaning, and, it could mean an increase in efficiency or security.
+List
+
+A list is a collection which is ordered and changeable. In Python lists are written with square brackets.
+Example
+
+Create a List:
+
+```python
+thislist = ["apple", "banana", "cherry"]
+print(thislist)
+```
 
 # How to Use
 
@@ -88,7 +76,7 @@ Python is an interpreted, high-level, general-purpose programming language.Its l
 
 
 ## test.py
-  It contains all functions required for the operations.It is imported in main.py file  
+  It contains all classes,functions required for the operations.It is imported in main.py file  
   
   
 # Contributing
