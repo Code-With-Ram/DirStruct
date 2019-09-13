@@ -75,9 +75,21 @@ import sys
 sys.exit() # to terminate program
 ```
 
+# Langauge
+Python is an interpreted, high-level, general-purpose programming language.Its language constructs and object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects.Python is dynamically typed and garbage-collected. It supports multiple programming paradigms, including procedural, object-oriented, and functional programming. 
 
 
-## Contributing
+# How to Use
+
+1.Run main.py
+2.Select the operation by inputing number between 1-6
+3.Give necessary input for operation
+4.Observe the output
+
+
+## test.py
+  It contains
+# Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
