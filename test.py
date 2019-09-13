@@ -20,7 +20,7 @@ def create_file(path):
         return ("No such a file Directory",False)
 
 
-def List(path):
+def list(path):
     list_path = {'Directory':[],'File':[]}
     for item in os.listdir():
         if os.path.isdir(item):
