@@ -34,4 +34,33 @@ Tasks :
     /snap/core18/1098/usr/bin/ssh
     /snap/core18/1074/etc/default/ssh
 
+# Requirements
 
+## os module
+The OS module in python provides functions for interacting with the operating system.
+
+## Installination
+OS module comes with python installination
+
+sudo apt install python3
+
+## Usage
+
+>>> import os.path
+>>> os.path.exists('mydirectory/myfile.txt')
+True
+>>> os.path.exists('does-not-exist.txt')
+False
+>>> os.path.exists('mydirectory')
+True
+
+
+
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
