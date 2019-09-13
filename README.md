@@ -80,37 +80,51 @@ thislist = ["apple", "banana", "cherry"]
 ---
 if path is not starting with '/' then return false
 traverse tree till path  
-  -if any directory in path does not exits then return false  
+  if any directory in path does not exits then return false  
   
-  -if path contains file in between then return false  
+  if path contains file in between then return false  
   
-  -if path exists create directory and return true
+  if path exists create directory and return true  
+  
 ---
 
-## 2.Creating File
+## 2.Creating File  
 
 ---
-Same as creating directory  
+Same as creating directory   
 
 ---
 
-## 3.list
+## 3.list  
 
 ---
-traverse down the tree till path
-for children in path  
-  -append path to child according to type  
+traverse down the tree till path  
+for children in path    
+  append path to child according to type  
   
 ---
 
 ## 4.Checking existence
 ---
-start from root node
-for children in root
-  if child is directory
-      repeat step 2
+start from root node  
+for children in root  
+  if child is directory  
+      repeat step 2  
   if child is matching with input return true  
-return false
+return false  
+
+---
+
+
+## 5.searching
+---
+traverse down the tree till path
+for children in path    
+
+  if child is directory  
+      repeat step 2  
+  if child is matching with input return true  
+return false  
 
 ---
 
