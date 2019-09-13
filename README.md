@@ -36,13 +36,15 @@ Tasks :
 
 # Requirements
 
-## os module
+## 1.os module
 The OS module in python provides functions for interacting with the operating system.
 
 ## Installination
 OS module comes with python installination
 
+```bash
 sudo apt install python3
+```
 
 ## Usage
 
@@ -52,7 +54,25 @@ import os
 os.path.exists('mydirectory/myfile.txt') #Checking if path exists or not
 os.path.isfile('samp.txt') #Checking if 'samp.txt' is file or not
 os.path.isdir('mydirectory') #Checking if 'mydirectory' is directory or not
-True
+
+```
+
+## 2.sys module
+The sys module in python provides functions for system operations.
+
+## Installination
+sys module comes with python installination
+
+```bash
+sudo apt install python3
+```
+
+## Usage
+
+```python
+import sys
+
+sys.exit() # to terminate program
 ```
 
 
