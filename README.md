@@ -46,14 +46,14 @@ sudo apt install python3
 
 ## Usage
 
->>> import os.path
->>> os.path.exists('mydirectory/myfile.txt')
-True
->>> os.path.exists('does-not-exist.txt')
-False
->>> os.path.exists('mydirectory')
-True
+```python
+import os
 
+os.path.exists('mydirectory/myfile.txt') #Checking if path exists or not
+os.path.isfile('samp.txt') #Checking if 'samp.txt' is file or not
+os.path.isdir('mydirectory') #Checking if 'mydirectory' is directory or not
+True
+```
 
 
 
