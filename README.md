@@ -88,7 +88,9 @@ Python is an interpreted, high-level, general-purpose programming language.Its l
 
 
 ## test.py
-  It contains
+  It contains all functions required for the operations.It is imported in main.py file
+  
+  
 # Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
