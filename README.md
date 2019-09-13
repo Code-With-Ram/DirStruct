@@ -81,14 +81,14 @@ Python is an interpreted, high-level, general-purpose programming language.Its l
 
 # How to Use
 
-1.Run main.py
-2.Select the operation by inputing number between 1-6
-3.Give necessary input for operation
-4.Observe the output
+1.Run main.py  
+2.Select the operation by inputing number between 1-6  
+3.Give necessary input for operation  
+4.Observe the output  
 
 
 ## test.py
-  It contains all functions required for the operations.It is imported in main.py file
+  It contains all functions required for the operations.It is imported in main.py file  
   
   
 # Contributing
