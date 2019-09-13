@@ -64,16 +64,55 @@ Create a List:
 
 ```python
 thislist = ["apple", "banana", "cherry"]
-print(thislist)
 ```
 
 # How to Use
-
 1.Run main.py  
 2.Select the operation by inputing number between 1-6  
 3.Give necessary input for operation  
 4.Observe the output  
 
+
+# How It works
+
+## 1.Creating Directory
+
+---
+if path is not starting with '/' then return false
+traverse tree till path  
+  -if any directory in path does not exits then return false  
+  
+  -if path contains file in between then return false  
+  
+  -if path exists create directory and return true
+---
+
+## 2.Creating File
+
+---
+Same as creating directory  
+
+---
+
+## 3.list
+
+---
+traverse down the tree till path
+for children in path  
+  -append path to child according to type  
+  
+---
+
+## 4.Checking existence
+---
+start from root node
+for children in root
+  if child is directory
+      repeat step 2
+  if child is matching with input return true  
+return false
+
+---
 
 ## test.py
   It contains all classes,functions required for the operations.It is imported in main.py file  
