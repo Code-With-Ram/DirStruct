@@ -130,7 +130,92 @@ return false
 
 ## test.py
   It contains all classes,functions required for the operations.It is imported in main.py file  
-  
+
+
+# Time complexcity for each functions
+
+# traverse
+
+n - no of directory to traverse  
+d - no of children in each directory while traversing  
+
+O(nd)  
+
+
+# create_directory
+
+n - no of directory to traverse  
+d - no of children in each directory while traversing  
+k - no of children in last directory after traversing  
+O(nd) + o(k)  
+
+
+# create_file
+
+n - no of directory to traverse  
+d nd - no of children in each directory while traversing  
+k - no of children in last directory after traversing  
+O(nd) + o(k)  
+
+
+# List
+
+n - no of directory to traverse  
+d - no of children in each directory while traversing  
+k - no of children in last directory in path after traversing  
+
+O(nd) + o(k)
+
+
+# check_existence 
+
+let T(n) be no of elementary operations performed by check()  
+if d is no of children in each directory while traversing ,  
+check() is called d no of times for each directory  
+
+O(d)  
+
+
+# Search
+
+#For traversing till path  
+n - no of directory to traverse  
+d - no of children in each directory while traversing  
+
+O(nd)  
+
+
+#for searching
+let T(n) be no of elementary operations performed by check()  
+if k is no of children in each directory while traversing ,  
+check() is called k no of times for each directory  
+
+O(k)
+
+
+total = O(nd) + O(k)  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
 # Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
