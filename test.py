@@ -1,27 +1,28 @@
-def is_subset(test_list,sub_list):
-    flag = 0
-    if(all(x in test_list for x in sub_list)): 
-        flag = 1
-
-    return flag
 
 
 class Node(object):
-    start = None
+    
+    start = None            #Reference to root 
+
     def __init__(self, data,Type,path=None):
-        self.name = data
-        self.children = []
-        self.type = Type
-        self.path = path
-    def is_leaf(self):
+        self.name = data        #Name of Directory or file
+        self.children = []      #Contents if node is directory
+        self.type = Type        #Type :- Directory / File 
+        self.path = path        #path to Directory / File
+
+    def is_leaf(self):              #to check if node is external or not
         return (self.children==[])
 
         
     def create_directory(self, path):
-        if path[0] !='/':
+
+        if path[0] !='/':       #if path not starting  with '/'
             return ("No such a file or Directory",False)
 
-        pathob,ispath = self.traverse(path.split('/')[:-1])
+        #Get the reference to last directory of path 
+        pathob,ispath = self.traverse(path.split('/')[:-1]) 
+
+        #if path is valid create directory and add it 
         if ispath:
             o = Node(path.split('/')[-1:],'Directory')
             o.path = path
@@ -29,6 +30,7 @@ class Node(object):
             return (path,True)
         else:
             return ("No such a file or Directory",False)
+
 
     def create_file(self, path):
         pathob,ispath = self.traverse(path.split('/')[:-1])
@@ -41,36 +43,57 @@ class Node(object):
             return ("No such a file or Directory",False)
             
 
-    def traverse(self,path):
-        if not path:
-            return False
+    #Traverse tree from root till the end of path and returns path object (Node),path exists or not (bool)
+    def traverse(self,path):  
 
-        path[0] = '/'
-        p = Node.start
-        masterpath = path[:]
-        while not p.is_leaf():
+        if not path:    #if path is empty
+            return None,False
+
+        path[0] = '/'   #set of starting of path as root '/'
+        p = Node.start  
+        masterpath = path[:] #hold a copy of path
+        
+        while not p.is_leaf():  
             o = p
-            if path==['/']:
+            if path==['/']:  
                 break
+            
+            #for every child reference in directory p
             for d in p.children:
-                if d.type =="File" and d.name[0] in path:
+                
+                #if path consists of file
+                if d.type =="File" and d.name[0] in path:  
                     raise Exception("File cannot be created within file")
-                    return False
-                   
-                if is_subset(path,d.name):
+                    return None,False
+
+                #if child exists in path assign d to p
+                #remove name of directory from path
+                if d.name[0] in path:
                     p = d
                     path.remove(d.name[0])
+
+            #In case none of children matching directories in path
+            #invalid directory name in path        
             if o == p:
                 break
+
+        #if name of directory at the end of path and p.name is matching ==>success traversal    
         if p.name[0] == masterpath[len(masterpath)-1]:
             return p,True
         else:
             return None,False
-                
 
+                
+    #List all directories and files in path
     def list(self,path):
+
+        #Get the reference to last directory of path 
         pathob,ispath = self.traverse(path.split('/')[:-1])
+
+        #To hold the result
         list_path = {'Directory':[],'File':[]}
+
+        #if path is valid
         if ispath:
             for o in pathob.children:
                 if o.type=='File':
@@ -81,18 +104,24 @@ class Node(object):
 
         return list_path
     
+
     def check_existence(self,item):
+
+        #start from '/'
         p = Node.start
+
+        #falg for existence
+        flag = [False]
+        #checks for existence of item recursively        
         def check(o,item):
-            if o.name == item:
-                return True
+            if o.name[0] == item:
+                flag[0] = True
 
             if o.type =='Directory':
                 for s in o.children:
                     check(s,item)
-                    
-        check(p,item)
-        return False
+        check(p,item)            
+        return flag[0]
 
     def search(self,path,string):
         result = []
@@ -111,4 +140,6 @@ class Node(object):
         for r in result:
             print(r)
         
+
+
 
