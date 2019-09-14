@@ -137,34 +137,30 @@ return false
 # traverse
 
 n - no of directory to traverse  
-d - no of children in each directory while traversing  
 
-O(nd)  
+O(n)  
 
 
 # create_directory
 
 n - no of directory to traverse  
-d - no of children in each directory while traversing  
 k - no of children in last directory after traversing  
-O(nd) + o(k)  
+O(n) + o(k)  
 
 
 # create_file
 
 n - no of directory to traverse  
-d - no of children in each directory while traversing  
 k - no of children in last directory after traversing  
-O(nd) + o(k)  
+O(n) + o(k)  
 
 
 # List
 
 n - no of directory to traverse  
-d - no of children in each directory while traversing  
 k - no of children in last directory in path after traversing  
 
-O(nd) + o(k)
+O(n) + o(k)
 
 
 # check_existence 
@@ -180,9 +176,8 @@ O(d)
 
 #For traversing till path  
 n - no of directory to traverse  
-d - no of children in each directory while traversing  
 
-O(nd)  
+O(n)  
 
 
 #for searching
