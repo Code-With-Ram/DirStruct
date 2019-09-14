@@ -52,7 +52,12 @@ class Node(object):
         path[0] = '/'   #set of starting of path as root '/'
         p = Node.start  
         masterpath = path[:] #hold a copy of path
-        
+
+        #removing null values
+        for k in path:
+            if k=='':
+                path.remove(k)
+                
         while not p.is_leaf():  
             o = p
             if path==['/']:  
@@ -154,3 +159,5 @@ class Node(object):
         for r in result:
             print(r)
         
+
+
