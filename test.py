@@ -68,35 +68,40 @@ class Node(object):
         for k in path:
             if k=='':
                 path.remove(k)
-                
+
+        
         while not p.is_leaf():  
+
             o = p
             if path==['/']:  
                 break
-            
-            #for every child reference in directory p
-            for d in p.children:
-                
-                #if path consists of file
+
+
+            #Getting all children 
+            childrenname = [d.name[0] for d in p.children] 
+
+            #if child exists in path
+            if path[1] in childrenname:
+
+                #get the reference to child
+                d = p.children[childrenname.index(path[1])]
+
+                #validation for file in path(input)
                 if d.type =="File" and d.name[0] in path:  
                     raise Exception("File cannot be created within file")
                     return None,False
 
-                #if child exists in path assign d to p
-                #remove name of directory from path
-                if d.name[0] in path:
-                    p = d
-                    path.remove(d.name[0])
-
-            #In case none of children matching directories in path
-            #invalid directory name in path        
-            if o == p:
+                
+                path.remove(path[1])
+                p = d
+            else:
+                #if no child is matching with path
                 break
-
+                
+ 
         #if name of directory at the end of path and p.name is matching ==>success traversal    
         if p.name[0] == masterpath[len(masterpath)-1]:
-
-
+            
             return p,True
         else:
             return None,False
@@ -174,6 +179,3 @@ class Node(object):
         for r in result:
             print(r)
         
-
-
-
