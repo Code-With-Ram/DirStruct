@@ -24,6 +24,11 @@ class Node(object):
 
         #if path is valid create directory and add it 
         if ispath:
+
+            #check if directory already exists
+            for d in pathob.children:
+                if d.name[0] == path.split('/')[-1:][0]:
+                    return ("Directory already exists ",False)
             o = Node(path.split('/')[-1:],'Directory')
             o.path = path
             pathob.children.append(o)
@@ -35,6 +40,12 @@ class Node(object):
     def create_file(self, path):
         pathob,ispath = self.traverse(path.split('/')[:-1])
         if ispath:
+            
+            #check if File already exists
+            for d in pathob.children:
+                if d.name[0] == path.split('/')[-1:][0]:
+                    return ("File already exists ",False)
+
             o = Node(path.split('/')[-1:],'File')
             o.path = path
             pathob.children.append(o)
@@ -84,6 +95,8 @@ class Node(object):
 
         #if name of directory at the end of path and p.name is matching ==>success traversal    
         if p.name[0] == masterpath[len(masterpath)-1]:
+
+
             return p,True
         else:
             return None,False
@@ -91,7 +104,8 @@ class Node(object):
                 
     #List all directories and files in path
     def list(self,path):
-
+        if path[len(path)-1]!='/':
+            path+='/'
         #Get the reference to last directory of path 
         pathob,ispath = self.traverse(path.split('/')[:-1])
 
@@ -135,9 +149,10 @@ class Node(object):
 
     #searches for string in file  and returns path for file    
     def search(self,path,string):
-        
+
+        if path[len(path)-1]!='/':
+            path+='/'
         result = []
-        
         #Get the reference to last directory of path 
         pathob,ispath = self.traverse(path.split('/')[:-1])
 
@@ -159,5 +174,3 @@ class Node(object):
         for r in result:
             print(r)
         
-
-
