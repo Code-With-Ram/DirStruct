@@ -110,26 +110,39 @@ class Node(object):
         #start from '/'
         p = Node.start
 
-        #falg for existence
+        #flag for existence
         flag = [False]
+
         #checks for existence of item recursively        
         def check(o,item):
+
             if o.name[0] == item:
                 flag[0] = True
 
+            #if o is directory traverse it
             if o.type =='Directory':
                 for s in o.children:
                     check(s,item)
+                    
         check(p,item)            
         return flag[0]
 
+
+    #searches for string in file  and returns path for file    
     def search(self,path,string):
+        
         result = []
+        
+        #Get the reference to last directory of path 
         pathob,ispath = self.traverse(path.split('/')[:-1])
+
         def check(o,item):
-            
+
+            #if Directory/file is ending with string 
             if o.name[0][len(o.name)-len(string)-1:] == string:
                 result.append(o.path)
+
+            #if its directory traverse it    
             if o.type =='Directory':
                 for s in o.children:
                     check(s,string)
@@ -137,9 +150,7 @@ class Node(object):
         check(pathob,string)
 
 
+        #Display the result 
         for r in result:
             print(r)
         
-
-
-
