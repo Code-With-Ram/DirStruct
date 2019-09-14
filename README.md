@@ -153,7 +153,7 @@ O(nd) + o(k)
 # create_file
 
 n - no of directory to traverse  
-d nd - no of children in each directory while traversing  
+d - no of children in each directory while traversing  
 k - no of children in last directory after traversing  
 O(nd) + o(k)  
 
