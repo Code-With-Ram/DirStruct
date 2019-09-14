@@ -27,7 +27,7 @@ class Node(object):
 
             #check if directory already exists
             for d in pathob.children:
-                if d.name[0] == path.split('/')[-1:][0]:
+                if d.name[0] == path.split('/')[-1:][0] and d.type == 'Directory':
                     return ("Directory already exists ",False)
             o = Node(path.split('/')[-1:],'Directory')
             o.path = path
@@ -43,7 +43,7 @@ class Node(object):
             
             #check if File already exists
             for d in pathob.children:
-                if d.name[0] == path.split('/')[-1:][0]:
+                if d.name[0] == path.split('/')[-1:][0] and d.type == 'File':
                     return ("File already exists ",False)
 
             o = Node(path.split('/')[-1:],'File')
@@ -174,3 +174,6 @@ class Node(object):
         for r in result:
             print(r)
         
+
+
+
