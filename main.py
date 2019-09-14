@@ -24,7 +24,7 @@ def main():
             print(tree.create_file(path))
             
       elif choice == 3:
-            path = input("Please Enter path for Listing directories and files ")
+            path = input("Please Enter path for Listing directories and files (path should be ended with '/' ) ")
             print(list(path))
             
       elif choice == 4:
